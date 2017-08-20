@@ -251,17 +251,13 @@ static stat_t _homing_axis_start(int8_t axis) {
         hm.search_travel = travel_distance;                      // search travels in positive direction
         hm.latch_backoff = fabs(cm.a[axis].latch_backoff);       // latch travels in positive direction
         hm.zero_backoff  = -max(0.0f, cm.a[axis].zero_backoff);  // zero backoff is negative direction (or zero)
-                                                                 // will set the maximum position
-                                                                 //     (plus any negative backoff)
-        hm.setpoint = cm.a[axis].travel_max + (max(0.0f, -cm.a[axis].zero_backoff));
     } else {
         hm.search_travel = -travel_distance;                    // search travels in negative direction
         hm.latch_backoff = -fabs(cm.a[axis].latch_backoff);     // latch travels in negative direction
         hm.zero_backoff  = max(0.0f, cm.a[axis].zero_backoff);  // zero backoff is positive direction (or zero)
-                                                                // will set the minimum position
-                                                                //     (minus any negative backoff)
-        hm.setpoint = cm.a[axis].travel_min + (max(0.0f, -cm.a[axis].zero_backoff));
     }
+    
+    hm.setpoint = 0.0f;                                          // will set the zero position
 
     // if homing is disabled for the axis then skip to the next axis
     hm.saved_jerk = cm_get_axis_jerk(axis);              // save the max jerk value
