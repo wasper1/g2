@@ -385,16 +385,16 @@
 #define X_AXIS_MODE                 AXIS_STANDARD           // {xam:  see canonical_machine.h cmAxisMode for valid values
 #endif
 #ifndef X_VELOCITY_MAX
-#define X_VELOCITY_MAX              2500.0                  // {xvm:  G0 max velocity in mm/min
+#define X_VELOCITY_MAX              1000.0                  // {xvm:  G0 max velocity in mm/min
 #endif
 #ifndef X_FEEDRATE_MAX
-#define X_FEEDRATE_MAX              2500.0                  // {xfr:  G1 max feed rate in mm/min
+#define X_FEEDRATE_MAX              800.0                  // {xfr:  G1 max feed rate in mm/min
 #endif
 #ifndef X_TRAVEL_MIN
 #define X_TRAVEL_MIN                0.0                     // {xtn:  minimum travel for soft limits
 #endif
 #ifndef X_TRAVEL_MAX
-#define X_TRAVEL_MAX                270.0                     // {xtm:  travel between switches or crashes
+#define X_TRAVEL_MAX                274.0                     // {xtm:  travel between switches or crashes
 #endif
 #ifndef X_JERK_MAX
 #define X_JERK_MAX                  800.0                  // {xjm:
@@ -415,10 +415,10 @@
 #define X_LATCH_VELOCITY            100.0                   // {xlv:  mm/min
 #endif
 #ifndef X_LATCH_BACKOFF
-#define X_LATCH_BACKOFF             4.0                     // {xlb:  mm
+#define X_LATCH_BACKOFF             6.0                     // {xlb:  mm
 #endif
 #ifndef X_ZERO_BACKOFF
-#define X_ZERO_BACKOFF              2.0                     // {xzb:  mm
+#define X_ZERO_BACKOFF              4.0                     // {xzb:  mm
 #endif
 
 // Y AXIS
@@ -426,16 +426,16 @@
 #define Y_AXIS_MODE                 AXIS_STANDARD
 #endif
 #ifndef Y_VELOCITY_MAX
-#define Y_VELOCITY_MAX              2500.0
+#define Y_VELOCITY_MAX              1000.0
 #endif
 #ifndef Y_FEEDRATE_MAX
-#define Y_FEEDRATE_MAX              2500.0
+#define Y_FEEDRATE_MAX              800.0
 #endif
 #ifndef Y_TRAVEL_MIN
 #define Y_TRAVEL_MIN                0.0
 #endif
 #ifndef Y_TRAVEL_MAX
-#define Y_TRAVEL_MAX                375.0
+#define Y_TRAVEL_MAX                383.0
 #endif
 #ifndef Y_JERK_MAX
 #define Y_JERK_MAX                  800.0
@@ -456,10 +456,10 @@
 #define Y_LATCH_VELOCITY            100.0
 #endif
 #ifndef Y_LATCH_BACKOFF
-#define Y_LATCH_BACKOFF             4.0
+#define Y_LATCH_BACKOFF             6.0
 #endif
 #ifndef Y_ZERO_BACKOFF
-#define Y_ZERO_BACKOFF              2.0
+#define Y_ZERO_BACKOFF              4.0
 #endif
 
 // Z AXIS
@@ -467,16 +467,16 @@
 #define Z_AXIS_MODE                 AXIS_STANDARD
 #endif
 #ifndef Z_VELOCITY_MAX
-#define Z_VELOCITY_MAX              2500.0
+#define Z_VELOCITY_MAX              1000.0
 #endif
 #ifndef Z_FEEDRATE_MAX
-#define Z_FEEDRATE_MAX              2500.0
+#define Z_FEEDRATE_MAX              800.0
 #endif
 #ifndef Z_TRAVEL_MAX
 #define Z_TRAVEL_MAX                0.0
 #endif
 #ifndef Z_TRAVEL_MIN
-#define Z_TRAVEL_MIN                -75.0
+#define Z_TRAVEL_MIN                -72.0
 #endif
 #ifndef Z_JERK_MAX
 #define Z_JERK_MAX                  800.0
@@ -497,10 +497,10 @@
 #define Z_LATCH_VELOCITY            100.0
 #endif
 #ifndef Z_LATCH_BACKOFF
-#define Z_LATCH_BACKOFF             4.0
+#define Z_LATCH_BACKOFF             6.0
 #endif
 #ifndef Z_ZERO_BACKOFF
-#define Z_ZERO_BACKOFF              2.0
+#define Z_ZERO_BACKOFF              4.0
 #endif
 
 /***************************************************************************************
