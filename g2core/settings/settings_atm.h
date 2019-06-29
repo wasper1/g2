@@ -86,6 +86,7 @@
 #define SAFETY_INTERLOCK_ENABLE     1       // {saf: 0=off, 1=on
 #endif
 
+// spindle PIN 11
 #ifndef SPINDLE_ENABLE_POLARITY
 #define SPINDLE_ENABLE_POLARITY     SPINDLE_ACTIVE_HIGH  // {spep: 0=active low, 1=active high
 #endif
@@ -208,6 +209,10 @@
 //*****************************************************************************
 
 // MOTOR 1
+//In gShield
+//step PIN 2
+//dir PIN 5
+//en PIN 8 (common)
 #ifndef M1_MOTOR_MAP
 #define M1_MOTOR_MAP                AXIS_X                  // {1ma: AXIS_X, AXIS_Y...
 #endif
@@ -234,6 +239,10 @@
 #endif
 
 // MOTOR 2
+//In gShield
+//step PIN 3
+//dir PIN 6
+//en PIN 8 (common)
 #ifndef M2_MOTOR_MAP
 #define M2_MOTOR_MAP                AXIS_Y
 #endif
@@ -260,6 +269,10 @@
 #endif
 
 // MOTOR 3
+//In gShield
+//step PIN 4
+//dir PIN 7
+//en PIN 8 (common)
 #ifndef M3_MOTOR_MAP
 #define M3_MOTOR_MAP                AXIS_Z
 #endif
@@ -681,7 +694,7 @@
     INPUT_FUNCTION_PANIC
 */
 
-// Xmin on v9 board
+// All limits + homming (gShield PIN 14)
 #ifndef DI1_MODE
 #define DI1_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -692,7 +705,7 @@
 #define DI1_FUNCTION                INPUT_FUNCTION_LIMIT
 #endif
 
-// Xmax
+// Probe (gShield PIN 15)
 #ifndef DI2_MODE
 #define DI2_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -700,10 +713,10 @@
 #define DI2_ACTION                  INPUT_ACTION_NONE
 #endif
 #ifndef DI2_FUNCTION
-#define DI2_FUNCTION                INPUT_FUNCTION_NONE
+#define DI2_FUNCTION                INPUT_FUNCTION_PROBE
 #endif
 
-// Ymin
+// Emergency (gShield PIN 16)
 #ifndef DI3_MODE
 #define DI3_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -711,10 +724,9 @@
 #define DI3_ACTION                  INPUT_ACTION_NONE
 #endif
 #ifndef DI3_FUNCTION
-#define DI3_FUNCTION                INPUT_FUNCTION_LIMIT
+#define DI3_FUNCTION                INPUT_FUNCTION_SHUTDOWN
 #endif
 
-// Ymax
 #ifndef DI4_MODE
 #define DI4_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -725,7 +737,6 @@
 #define DI4_FUNCTION                INPUT_FUNCTION_NONE
 #endif
 
-// Zmin
 #ifndef DI5_MODE
 #define DI5_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -733,10 +744,9 @@
 #define DI5_ACTION                  INPUT_ACTION_NONE
 #endif
 #ifndef DI5_FUNCTION
-#define DI5_FUNCTION                INPUT_FUNCTION_PROBE
+#define DI5_FUNCTION                INPUT_FUNCTION_NONE
 #endif
 
-// Zmax
 #ifndef DI6_MODE
 #define DI6_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -744,10 +754,9 @@
 #define DI6_ACTION                  INPUT_ACTION_NONE
 #endif
 #ifndef DI6_FUNCTION
-#define DI6_FUNCTION                INPUT_FUNCTION_LIMIT
+#define DI6_FUNCTION                INPUT_FUNCTION_NONE
 #endif
 
-// Amin
 #ifndef DI7_MODE
 #define DI7_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -758,7 +767,6 @@
 #define DI7_FUNCTION                INPUT_FUNCTION_NONE
 #endif
 
-// Amax
 #ifndef DI8_MODE
 #define DI8_MODE                    IO_ACTIVE_LOW     // Normally open
 #endif
@@ -769,7 +777,6 @@
 #define DI8_FUNCTION                INPUT_FUNCTION_NONE
 #endif
 
-// Safety line
 #ifndef DI9_MODE
 #define DI9_MODE                    IO_ACTIVE_HIGH     // Normally closed
 #endif
@@ -871,19 +878,19 @@
 // *** PWM Settings *** //
 
 #ifndef P1_PWM_FREQUENCY
-#define P1_PWM_FREQUENCY            100                   // in Hz
+#define P1_PWM_FREQUENCY            2000                   // in Hz
 #endif
 #ifndef P1_CW_SPEED_LO
-#define P1_CW_SPEED_LO              7900                  // in RPM (arbitrary units)
+#define P1_CW_SPEED_LO              0                  // in RPM (arbitrary units)
 #endif
 #ifndef P1_CW_SPEED_HI
-#define P1_CW_SPEED_HI              12800
+#define P1_CW_SPEED_HI              27500
 #endif
 #ifndef P1_CW_PHASE_LO
-#define P1_CW_PHASE_LO              0.13                    // phase [0..1]
+#define P1_CW_PHASE_LO              0.0                    // phase [0..1]
 #endif
 #ifndef P1_CW_PHASE_HI
-#define P1_CW_PHASE_HI              0.17
+#define P1_CW_PHASE_HI              1.0
 #endif
 #ifndef P1_CCW_SPEED_LO
 #define P1_CCW_SPEED_LO             0.0
@@ -892,13 +899,13 @@
 #define P1_CCW_SPEED_HI             0.0
 #endif
 #ifndef P1_CCW_PHASE_LO
-#define P1_CCW_PHASE_LO             0.1
+#define P1_CCW_PHASE_LO             0.0
 #endif
 #ifndef P1_CCW_PHASE_HI
-#define P1_CCW_PHASE_HI             0.1
+#define P1_CCW_PHASE_HI             0.0
 #endif
 #ifndef P1_PWM_PHASE_OFF
-#define P1_PWM_PHASE_OFF            0.1
+#define P1_PWM_PHASE_OFF            0.0
 #endif
 
 // *** Heater Settings - relevant to 3dp machines *** //
