@@ -881,16 +881,16 @@
 #define P1_PWM_FREQUENCY            2000                   // in Hz
 #endif
 #ifndef P1_CW_SPEED_LO
-#define P1_CW_SPEED_LO              0                  // in RPM (arbitrary units)
+#define P1_CW_SPEED_LO              3500                  // in RPM (arbitrary units)
 #endif
 #ifndef P1_CW_SPEED_HI
-#define P1_CW_SPEED_HI              27500
+#define P1_CW_SPEED_HI              24000
 #endif
 #ifndef P1_CW_PHASE_LO
-#define P1_CW_PHASE_LO              0.0                    // phase [0..1]
+#define P1_CW_PHASE_LO              0.018                   // phase [0..1]
 #endif
 #ifndef P1_CW_PHASE_HI
-#define P1_CW_PHASE_HI              1.0
+#define P1_CW_PHASE_HI              0.865
 #endif
 #ifndef P1_CCW_SPEED_LO
 #define P1_CCW_SPEED_LO             0.0
